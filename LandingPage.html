@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DBBS</title>
+
+    <!-- Link to Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <style>
+      /* Optional custom styles */
+      .swiper-container {
+        width: 30%;
+        height: 300px;
+        display: flex;
+        
+        justify-content: start;
+        align-items: center;
+        /* Adjust height as needed */
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #020104;
+        /* Other styles */
+      }
+    </style>
+    <link rel="stylesheet" href="LandingStyle.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- NAVBAR------------------ -->
+      <nav class="navbar">
+        <div class="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="106"
+            height="16"
+            viewBox="0 0 106 16"
+            fill="none"
+          >
+            <path
+              d="M50.6139 4.576V4.8C50.6139 6.048 50.1763 7.11467 49.3009 8C50.1763 8.88534 50.6139 9.952 50.6139 11.2V11.44C50.6139 12.6987 50.1656 13.776 49.2689 14.672C48.3722 15.5573 47.2941 16 46.0345 16L27.8767 16C27.834 16 27.7966 15.9893 27.7646 15.968C27.7432 15.936 27.7326 15.904 27.7326 15.872L27.7326 0.144004C27.7326 0.101338 27.7432 0.0693377 27.7646 0.0480044C27.7966 0.0160044 27.834 4.3752e-06 27.8767 4.3752e-06L46.0345 4.3752e-06C47.2941 4.3752e-06 48.3722 0.448004 49.2689 1.344C50.1656 2.24 50.6139 3.31734 50.6139 4.576ZM30.935 2.752V6.64L46.0345 6.64C46.4081 6.64 46.7283 6.50667 46.9952 6.24C47.2727 5.96267 47.4115 5.63734 47.4115 5.264V4.112C47.4115 3.73867 47.2727 3.41867 46.9952 3.152C46.7283 2.88534 46.4081 2.752 46.0345 2.752L30.935 2.752ZM47.4115 11.888V10.752C47.4115 10.368 47.2727 10.0427 46.9952 9.776C46.7283 9.50934 46.4081 9.376 46.0345 9.376L30.935 9.376L30.935 13.264L46.0345 13.264C46.4081 13.264 46.7283 13.1307 46.9952 12.864C47.2727 12.5973 47.4115 12.272 47.4115 11.888Z"
+              fill="#ECECEC"
+            />
+            <path
+              d="M78.315 4.576V4.8C78.315 6.048 77.8773 7.11467 77.002 8C77.8773 8.88534 78.315 9.952 78.315 11.2V11.44C78.315 12.6987 77.8666 13.776 76.97 14.672C76.0733 15.5573 74.9951 16 73.7355 16H55.5777C55.535 16 55.4976 15.9893 55.4656 15.968C55.4443 15.936 55.4336 15.904 55.4336 15.872V0.144004C55.4336 0.101338 55.4443 0.0693377 55.4656 0.0480044C55.4976 0.0160044 55.535 4.3752e-06 55.5777 4.3752e-06L73.7355 4.3752e-06C74.9951 4.3752e-06 76.0733 0.448004 76.97 1.344C77.8666 2.24 78.315 3.31734 78.315 4.576ZM58.636 2.752V6.64L73.7355 6.64C74.1091 6.64 74.4294 6.50667 74.6962 6.24C74.9738 5.96267 75.1125 5.63734 75.1125 5.264V4.112C75.1125 3.73867 74.9738 3.41867 74.6962 3.152C74.4294 2.88534 74.1091 2.752 73.7355 2.752L58.636 2.752ZM75.1125 11.888V10.752C75.1125 10.368 74.9738 10.0427 74.6962 9.776C74.4294 9.50934 74.1091 9.376 73.7355 9.376L58.636 9.376V13.264L73.7355 13.264C74.1091 13.264 74.4294 13.1307 74.6962 12.864C74.9738 12.5973 75.1125 12.272 75.1125 11.888Z"
+              fill="#ECECEC"
+            />
+            <path
+              d="M86.3371 4.112V5.248C86.3371 5.632 86.4705 5.95734 86.7374 6.224C87.0042 6.49067 87.3245 6.624 87.6981 6.624L101.437 6.624C102.696 6.624 103.769 7.072 104.655 7.968C105.552 8.85333 106 9.93067 106 11.2V11.424C106 12.6827 105.552 13.76 104.655 14.656C103.769 15.552 102.696 16 101.437 16L84.1754 16C84.1434 16 84.1114 15.9893 84.0794 15.968C84.058 15.936 84.0473 15.8987 84.0473 15.856V13.392C84.0473 13.3493 84.058 13.3173 84.0794 13.296C84.1114 13.264 84.1434 13.248 84.1754 13.248L101.437 13.248C101.81 13.248 102.13 13.1147 102.397 12.848C102.664 12.5813 102.798 12.2613 102.798 11.888V10.736C102.798 10.3627 102.664 10.0427 102.397 9.776C102.13 9.49867 101.81 9.36 101.437 9.36L87.6981 9.36C86.4385 9.36 85.3603 8.91734 84.4636 8.032C83.5776 7.136 83.1346 6.05867 83.1346 4.8V4.56C83.1346 3.30134 83.5776 2.22934 84.4636 1.344C85.3603 0.448004 86.4385 4.3752e-06 87.6981 4.3752e-06L104.959 4.3752e-06C104.991 4.3752e-06 105.018 0.0160044 105.039 0.0480044C105.071 0.0693377 105.087 0.0960044 105.087 0.128004V2.608C105.087 2.64 105.071 2.672 105.039 2.704C105.018 2.72534 104.991 2.736 104.959 2.736L87.6981 2.736C87.3245 2.736 87.0042 2.86934 86.7374 3.136C86.4705 3.40267 86.3371 3.728 86.3371 4.112Z"
+              fill="#ECECEC"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M21.5203 1.344C20.6343 0.448 19.5562 0 18.2859 0L0.128097 0C0.096073 0 0.0640486 0.016 0.0320243 0.048C0.0106748 0.0693333 0 0.101333 0 0.144L0 15.856C0 15.8987 0.0106748 15.936 0.0320243 15.968C0.0640486 15.9893 0.096073 16 0.128097 16L18.2859 16C19.5562 16 20.6343 15.5573 21.5203 14.672C22.417 13.776 22.8654 12.6933 22.8654 11.424L22.8654 4.576C22.8654 3.30667 22.417 2.22933 21.5203 1.344ZM19.2626 3.152C19.5295 3.41867 19.6629 3.73867 19.6629 4.112L19.6629 11.888C19.6629 12.2613 19.5295 12.5867 19.2626 12.864C18.9958 13.1307 18.6702 13.264 18.2859 13.264L3.20243 13.264L3.20243 2.736H3.21947V1.38909L7.08281 1.38909L7.65309 2.736L18.2859 2.736C18.6702 2.736 18.9958 2.87467 19.2626 3.152Z"
+              fill="#ECECEC"
+            />
+          </svg>
+        </div>
+        <div class="navlist">
+          <a href="">HOME</a>
+          <a href="">SERVICE</a>
+          <a href="">INDUSTRIES</a>
+          <a href="">ABOUT US</a>
+        </div>
+      </nav>
+
+      <!-- -------------SECTION_ONE -->
+      <div class="one">
+        <div class="one-left">
+          <div class="title"><b>Data</b> Processing <b>Simplified</b></div>
+          <p class="text">Expect Brilliance in every Data vertical</p>
+          <div class="free-btn">
+            Try for free
+            <div class="arrow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="42"
+                height="15"
+                viewBox="0 0 42 15"
+                fill="none"
+              >
+                <path
+                  d="M41.2071 8.20711C41.5976 7.81658 41.5976 7.18342 41.2071 6.79289L34.8431 0.428932C34.4526 0.0384078 33.8195 0.0384078 33.4289 0.428932C33.0384 0.819457 33.0384 1.45262 33.4289 1.84315L39.0858 7.5L33.4289 13.1569C33.0384 13.5474 33.0384 14.1805 33.4289 14.5711C33.8195 14.9616 34.4526 14.9616 34.8431 14.5711L41.2071 8.20711ZM0 8.5H40.5V6.5H0V8.5Z"
+                  fill="#CBCCCD"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="one-right">
+          <img
+            class="one-main-image"
+            src="Assets/Section Two Assets/Main Image.png"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </div>
+
+      <!-- -------------SECTION_TWO -->
+      <div class="two">
+        <div class="two-item">
+          <img
+            class="small-icon"
+            src="Assets/Section Two Assets/Icons.png"
+            alt=""
+            srcset=""
+          />
+          <h4>Invoice Hassle</h4>
+          <p>
+            In a competitive world, our hybrid accounting boosts efficiency and
+            confidence for entrepreneurs seeking a strategic edge.
+          </p>
+        </div>
+
+        <div class="two-item">
+          <img
+            class="small-icon"
+            src="Assets/Section Two Assets/Icons (1).png"
+            alt=""
+            srcset=""
+          />
+          <h4>Leave Woes</h4>
+          <p>
+            Automate leave management effortlessly. Allocate, approve, stay
+            updated. Elevate workforce efficiency.
+          </p>
+        </div>
+        <div class="two-item">
+          <img
+            class="small-icon"
+            src="Assets/Section Two Assets/Icons (2).png"
+            alt=""
+            srcset=""
+          />
+          <h4>Tackle Technical Hurdles</h4>
+          <p>
+            System empowers industries by ensuring personnel understand
+            essential steps for specific tasks or operations, fostering
+            efficiency and expertise.
+          </p>
+        </div>
+        <div class="two-item">
+          <img
+            class="small-icon"
+            src="Assets/Section Two Assets/Icons (3).png"
+            alt=""
+            srcset=""
+          />
+          <h4>Data Migration Blues</h4>
+          <p>
+            Data migration, entry, and CRM management made easy. Lease CRM
+            directly for simplified performance.
+          </p>
+        </div>
+      </div>
+
+      <!-- -------------SECTION_THREE -->
+      <div class="three">
+        <div class="title">
+          <b>Powerful</b> tools for your growth <b>solutions</b>
+        </div>
+        <div class="text">
+          Discover powerful tools tailored for your growth journey
+        </div>
+        <div class="info-containers">
+          <div class="three-item">
+            <img
+              src="Assets/Section Three Assets/Icon container.png"
+              alt=""
+              class="three-icon"
+            />
+            <div class="item-title">Data Management</div>
+            <p>
+              Leverage the power to seamlessly transform your data into a
+              strategic asset, propelling precise business decisions without the
+              burden.
+            </p>
+          </div>
+
+          <div class="three-item">
+            <img
+              src="Assets/Section Three Assets/Icon container (11).png"
+              alt=""
+              class="three-icon"
+            />
+            <div class="item-title">Accounting Service</div>
+            <p>
+              Streamline your finances with our tailored solutions for
+              businesses of all sizes..
+            </p>
+          </div>
+          <div class="three-item">
+            <img
+              src="Assets/Section Three Assets/Icon container (1).png"
+              alt=""
+              class="three-icon"
+            />
+            <div class="item-title">Learning & Development</div>
+            <p>
+              Unleash and develop human assets with our customized learning and
+              development programs
+            </p>
+          </div>
+          <div class="three-item">
+            <img
+              src="Assets/Section Three Assets/Icon container (1).png"
+              alt=""
+              class="three-icon"
+            />
+            <div class="item-title">Analytics procedure</div>
+            <p>
+              Empower decision-making with actionable insights from analytics
+              across diverse data segments
+            </p>
+          </div>
+          <div class="three-item">
+            <img
+              src="Assets/Section Three Assets/Icon container (3).png"
+              alt=""
+              class="three-icon"
+            />
+            <div class="item-title">Website Service</div>
+            <p>
+              Elevate your online presence with our skilled team's web design,
+              e-commerce, and SEO expertise
+            </p>
+          </div>
+          <div class="three-item">
+            <img
+              src="Assets/Section Three Assets/Icon container (10).png"
+              alt=""
+              class="three-icon"
+            />
+            <div class="item-title">E- commerce support</div>
+            <p>
+              Expand revenue globally with our experts crafting custom
+              e-commerce solutions for seamless shopping, inventory, and
+              payments.
+            </p>
+          </div>
+          <div class="three-item">
+            <img
+              src="Assets/Section Three Assets/Icon container (7).png"
+              alt=""
+              class="three-icon"
+            />
+            <div class="item-title">CRM</div>
+            <p>
+              DBBS's Comprehensive CRM Solution Paves the Way for Seamless
+              Engagement and Skyrocketing Sales.
+            </p>
+          </div>
+          <div class="three-item">
+            <img
+              src="Assets/Section Three Assets/Icon container (8).png"
+              alt=""
+              class="three-icon"
+            />
+            <div class="item-title">ERP Solutions</div>
+            <p>
+              Drowning in inefficiencies, data silos, and spreadsheet chaos? Let
+              our seasoned ERP consultants rescue you. Seamless solutions, zero
+              hassle.
+            </p>
+          </div>
+          <div class="three-item">
+            <img
+              src="Assets/Section Three Assets/Icon container (9).png"
+              alt=""
+              class="three-icon"
+            />
+            <div class="item-title">Standard Operations procedures</div>
+            <p>
+              Revamp Your Operations: From SOPs to Work Instructions, We've Got
+              Your Efficiency Upgrade Covered.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- -----SECTION FOUR------------ -->
+      <div class="four">
+        <div class="title">Empowering <b>Global Business Diversity.</b></div>
+
+        <img
+          class="four-image"
+          src="Assets/Section Four Assets/four-image.png"
+          alt=""
+        />
+      </div>
+
+      <!-- -----SECTION FIVE------------ -->
+      <div class="five">
+       
+      
+
+        <div class="five-item">
+            <img src="Assets/Section 5 Assets/Icon container.png" alt="" class="five-icon">
+            <div class="five-item-title">
+              Retail
+            </div>
+            <p>
+              Unlock Retail Success: Empowering Multichannel Excellence for Enhanced Customer Experience!
+            </p>
+          </div>
+
+          <div class="five-item">
+            <img src="Assets/Section 5 Assets/Icon container (1).png" alt="" class="five-icon">
+            <div class="five-item-title">
+              Hospitality
+            </div>
+            <p>
+              Elevate Hospitality Excellence: Streamlining Costs, Quality, and Staffing Solutions
+            </p>
+          </div>
+
+          <div class="five-item">
+            <img src="Assets/Section 5 Assets/Icon container.png" alt="" class="five-icon">
+            <div class="five-item-title">
+              Education
+            </div>
+            <p>
+              Unlock the power of education without the hassle – elevate your institution with our seamless outsourcing services.
+            </p>
+          </div>
+
+          <div class="five-item">
+            <img src="Assets/Section 5 Assets/Icon container.png" alt="" class="five-icon">
+            <div class="five-item-title">
+              Transportation
+            </div>
+            <p>
+              Accelerate your business with our transportation outsourcing services—efficiency in the fast lane, cost-effectiveness in the driver's seat
+            </p>
+          </div>
+
+          
+
+          <div class="five-item">
+            <img src="Assets/Section 5 Assets/Icon container.png" alt="" class="five-icon">
+            <div class="five-item-title">
+              Insurance
+            </div>
+            <p>
+              Boost your insurance business: Outsource with us for peak performance. We handle the details while you focus on success
+            </p>
+          </div>
+
+          <div class="five-item">
+            <img src="Assets/Section 5 Assets/Icon container.png" alt="" class="five-icon">
+            <div class="five-item-title">
+              Automotive
+            </div>
+            <p>
+              Navigate efficiency with us. Drive success—outsource to accelerate! Unleash your automotive business's potential with our solutions.
+            </p>
+          </div>
+
+          <div class="five-item">
+            <img src="Assets/Section 5 Assets/Icon container.png" alt="" class="five-icon">
+            <div class="five-item-title">
+              Gas & Service Station
+            </div>
+            <p>
+              Outsource with us for efficient, excellent gas & service station solutions.
+            </p>
+          </div>
+
+          <div class="five-item">
+            <img src="Assets/Section 5 Assets/Icon container.png" alt="" class="five-icon">
+            <div class="five-item-title">
+              Food & Beverages
+            </div>
+            <p>
+              Elevate your food business with us, where flavor meets efficiency, putting success on the menu through culinary operations.
+            </p>
+          </div>
+        </div>
+
+         <!-- ------------------SECTION SIX------------------ -->
+         <div class="six">
+          <div class="sixtop">
+            <div class="sixleft">
+              <div class="title">Empowered Service, Powered by Us</div>
+              <div class="six-left-box">
+                <h3>Ledger Pro</h3>
+                <p>
+                  Effortlessly Transforming, Verifying, and Compliantly Managing
+                  Documents
+                </p>
+              </div>
+            </div>
+            <div class="sixright">
+              <img
+                class="six-image"
+                src="Assets/Section Six Assets/six-image.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="sixbottom">
+            <div class="sixbottomitem">
+              <h2>1</h2>
+              <p>Scan, upload, and secure your documents with us</p>
+            </div>
+            <div class="sixbottomitem">
+              <h2>2</h2>
+              <p>We compile and complete every process with precision</p>
+            </div>
+            <div class="sixbottomitem">
+              <h2>3</h2>
+              <p>Get compliance-ready records—effortless and prepared</p>
+            </div>
+            <div class="sixbottomitem">
+              <h2>4</h2>
+              <p>Through Pre-Audit points, we verify documents with care</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ------------------SECTION SEVEN------------------ -->
+        <div class="seven">
+          <img
+            class="seven-one"
+            src="Assets/Section Seven Assets/seven-one.png"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="seven-two"
+            src="Assets/Section Seven Assets/seven-two.png"
+            alt=""
+            srcset=""
+          />
+        </div>
+
+        <!-- ------------------SECTION EIGHT------------------ -->
+        <div class="eight">
+          <div class="eight-top">
+            <div class="title">Building the future with us</div>
+          </div>
+          <div class="eight-mid">
+            <div class="eight-item">
+              <img
+                src="Assets/Section Eight Assets/Icon container.png"
+                alt=""
+                class="eight-icon"
+              />
+              <div class="eight-item-title">Accuracy</div>
+              <div class="eight-text">
+                Precision Perfected, Profits Amplified: Elevate your business
+                with our outsourcing services, where accuracy meets efficiency
+              </div>
+            </div>
+            <div class="eight-item">
+              <img
+                src="Assets/Section Eight Assets/Icon container (1).png"
+                alt=""
+                class="eight-icon"
+              />
+              <div class="eight-item-title">Accuracy</div>
+              <div class="eight-text">
+                Precision Perfected, Profits Amplified: Elevate your business
+                with our outsourcing services, where accuracy meets efficiency
+              </div>
+            </div>
+            <div class="eight-item">
+              <img
+                src="Assets/Section Eight Assets/Icon container (2).png"
+                alt=""
+                class="eight-icon"
+              />
+              <div class="eight-item-title">Accuracy</div>
+              <div class="eight-text">
+                Precision Perfected, Profits Amplified: Elevate your business
+                with our outsourcing services, where accuracy meets efficiency
+              </div>
+            </div>
+          </div>
+          <div class="eight-bottom">
+            <div class="eight-bottom-text">
+              Sign up and dedicated manager will reach you shortly
+            </div>
+            <h4>Sign Up</h4>
+          </div>
+        </div>
+
+        <!-- ------------------SECTION NINE------------------ -->
+        <div class="nine">
+          <div class="title">Our Journey</div>
+          <div class="text">
+            Given Data brilliance’s commitment to simplify your business
+            process, our team brings in competence and expertise across multiple
+            ambits of business. Our expertise and your strength bring together a
+            wining combinations for business success.
+          </div>
+        </div>
+
+        <!-- ------------------SECTION TEN------------------ -->
+        <div class="ten">
+          <img class="ten-image" src="Assets/Section 10 Assets/3.png" alt="" />
+          <img class="ten-image" src="Assets/Section 10 Assets/2.png" alt="" />
+          <img class="ten-image" src="Assets/Section 10 Assets/1.png" alt="" />
+        </div>
+
+     
+    </div>
+
+        
+      </div>
+    </div>
+
+    <!-- Link to Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      // Initialize Swiper
+      var swiper = new Swiper(".swiper-container", {
+        // Optional parameters
+        loop: true, // Loop the carousel
+        autoplay: {
+          delay: 3000, // Auto-play delay in milliseconds
+        },
+        // If you want to enable pagination
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true, // Allow pagination bullets to be clickable
+        },
+        // If you want to enable navigation buttons
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
